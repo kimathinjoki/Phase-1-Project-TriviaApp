@@ -1,0 +1,25 @@
+{
+  "name": "project-triviaapp",
+  "version": "1.0.0",
+  "description": "An application to test your wits and general knowledge on random topics.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimathinjoki/Phase-1-Project-TriviaApp.git"
+  },
+  "keywords": [
+    "trivia",
+    "test",
+    "score",
+    "win"
+  ],
+  "author": "Kimathi Njoki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimathinjoki/Phase-1-Project-TriviaApp/issues"
+  },
+  "homepage": "https://github.com/kimathinjoki/Phase-1-Project-TriviaApp#readme"
+}
