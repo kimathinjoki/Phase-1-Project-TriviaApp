@@ -14,7 +14,7 @@ const randomQn = "https://the-trivia-api.com/api/questions";
 //getting the specific category menus
 
 const artElem = document.getElementById("art")
-const filmElem = document.getElementById("film")
+const filmElem = document.getElementById("filmu")
 const foodElem = document.getElementById("food")
 const generalElem = document.getElementById("general")
 const historyElem = document.getElementById("history")
@@ -60,7 +60,10 @@ document.addEventListener("DOMContentLoaded",()=>{
         questionFetch(art)
     })
 
-    filmElem.addEventListener('click',()=>questionFetch(film))
+    filmElem.addEventListener('click',()=>{
+        console.log("error iko hapa")
+        // questionFetch(film)
+    })
 
     foodElem.addEventListener('click',()=>questionFetch("https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=5"))
 
@@ -92,47 +95,18 @@ document.addEventListener("DOMContentLoaded",()=>{
 })
 
 
-// const configData ={
-//     method:"GET"
-//     headers:{
-//         "Content-Type":"application/json"
-//         Accept: "application/json"
-//     }
-// }
+const configData ={
+    method:"GET",
+    headers:{
+        "Content-Type":"application/json",
+        Accept: "application/json"
+    }
+}
 
 //function for fetching the data and appending it in various html elements
 
-
-
-//     //category links
-// const art =  "https://the-trivia-api.com/api/questions?categories=arts_and_literature&limit=20";
-// const film = "https://the-trivia-api.com/api/questions?categories=film_and_tv&limit=20";
-// const food = "https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=20";
-// const general = "https://the-trivia-api.com/api/questions?categories=general_knowledge&limit=20";
-// const geography = "https://the-trivia-api.com/api/questions?categories=geography&limit=20";
-// const history = "https://the-trivia-api.com/api/questions?categories=history&limit=20";
-// const music = "https://the-trivia-api.com/api/questions?categories=music&limit=20";
-// const science = "https://the-trivia-api.com/api/questions?categories=science&limit=20";
-// const society = "https://the-trivia-api.com/api/questions?categories=society_and_culture&limit=20";
-// const sport = "https://the-trivia-api.com/api/questions?categories=sport_and_leisure&limit=20";
-// const randomQn = "https://the-trivia-api.com/api/questions";
-
-// //getting the specific category menus
-
-// const artElem = document.getElementById("art")
-// const filmElem = document.getElementById("film")
-// const foodElem = document.getElementById("food")
-// const generalElem = document.getElementById("general")
-// const historyElem = document.getElementById("history")
-//     const musicElem = document.getElementById("music")
-//     const scienceElem = document.getElementById("science")
-//     const societyElem = document.getElementById("society")
-//     const sportElem = document.getElementById("sport")
-
-
-
 function questionFetch(url){
-    fetch(url)
+    fetch(url,configData)
     .then(res =>res.json())
     .then(data =>{
         console.log(data)
