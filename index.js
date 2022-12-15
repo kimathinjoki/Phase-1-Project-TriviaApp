@@ -23,13 +23,34 @@ function questionFetch(){
             // console.log(item.question)
             const qn = document.getElementById("question")
             const rightAnswer = document.getElementById("answer")
-            // const rightAnswr = document.createElement("li")
+            const mChoice = document.getElementById("multichoices")
+            const choices = document.createElement("li")
 
             setTimeout(() => {
                 console.log(item.question);
                 qn.innerText=item.question;
                 rightAnswer.innerText = item.correctAnswer
-                // rightAnswer.appendChild(rightAnswr)
+
+                //getting a list of shuffled multiple questions
+                let allAnswers= item.incorrectAnswers
+                console.log(allAnswers)
+
+                //including the correct answer
+                allAnswers.push(item.correctAnswer)
+                const shuffledAnswers = allAnswers.sort((a, b) => 0.5 - Math.random());
+                console.log(shuffledAnswers)
+
+                //assigning the shuflled answers to a list
+                mChoice.innerHTML = `<li>${shuffledAnswers[0]}</li>
+                <li>${shuffledAnswers[1]}</li>
+                <li>${shuffledAnswers[2]}</li>
+                <li>${shuffledAnswers[3]}</li>
+                `
+
+
+
+
+
 
             }, i * 9000)
             setTimeout(()=>{
