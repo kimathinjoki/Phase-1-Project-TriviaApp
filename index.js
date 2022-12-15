@@ -179,7 +179,8 @@ function questionFetch(url){
                 }
 
                 //making the progress bar restart on each loop
-                progressBar.style.animation ="load 10s"
+                progressBar.style.animation ="load 10s";
+                progressBar.style= "animation-iteration-count:infinite";
 
 
             }, i * 10000)
