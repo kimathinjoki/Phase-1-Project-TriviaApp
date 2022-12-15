@@ -41,10 +41,10 @@ function questionFetch(){
                 console.log(shuffledAnswers)
 
                 //assigning the shuflled answers to a list
-                mChoice.innerHTML = `<li>${shuffledAnswers[0]}</li>
-                <li>${shuffledAnswers[1]}</li>
-                <li>${shuffledAnswers[2]}</li>
-                <li>${shuffledAnswers[3]}</li>
+                mChoice.innerHTML = `<li class="answerList">${shuffledAnswers[0]}</li>
+                <li class="answerList">${shuffledAnswers[1]}</li>
+                <li class="answerList">${shuffledAnswers[2]}</li>
+                <li class="answerList">${shuffledAnswers[3]}</li>
                 `
 
 
@@ -52,7 +52,7 @@ function questionFetch(){
 
 
 
-            }, i * 9000)
+            }, i * 10000)
             setTimeout(()=>{
                 console.log(item.correctAnswer)
                 // rightAnswr.innerText = item.correctAnswer
