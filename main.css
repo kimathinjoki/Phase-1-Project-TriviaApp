@@ -39,7 +39,7 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 10s linear infinite;
-  top:100%;
+  top:0;
 }
 
 @keyframes shine {
@@ -141,7 +141,7 @@ a {
     transform: translateY(0) rotate(45deg);
 }
 
-#categories{
+.categories{
     clear: both;
     width: 100%;
     text-align: left;
@@ -153,7 +153,7 @@ a {
 
   }
 
-  #categories a:hover {
+  .categories a:hover {
     padding-left: 10px;
     border-left: 2px solid  #f42c2c;
     transition: all 0.5s ease;
