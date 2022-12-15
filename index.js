@@ -4,6 +4,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 })
 
-function category(){
-    
+function questionFetch(){
+    fetch
 }
