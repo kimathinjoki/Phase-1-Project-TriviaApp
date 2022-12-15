@@ -212,7 +212,7 @@ a {
 }
 
 .progress-value {
-  animation: load 9.3s normal forwards;
+  animation: load 10s normal forwards;
 
   box-shadow: 0 10px 40px -10px #fff;
   border-radius: 100px;
@@ -244,6 +244,7 @@ a {
   padding-right: 10px;
   border: .10em solid rgb(0, 0, 0);
   border-radius: 10px;
+  margin-top: 5px;
 
 
 }

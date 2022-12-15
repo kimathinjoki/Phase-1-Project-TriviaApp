@@ -29,35 +29,37 @@ function questionFetch(){
             setTimeout(() => {
                 console.log(item.question);
                 qn.innerText=item.question;
-                rightAnswer.innerText = item.correctAnswer
+                // rightAnswer.innerText = item.correctAnswer
 
                 //getting a list of shuffled multiple questions
                 let allAnswers= item.incorrectAnswers
                 console.log(allAnswers)
 
-                //including the correct answer
+                //including the correct answer to the multiple question and shufle the list
                 allAnswers.push(item.correctAnswer)
                 const shuffledAnswers = allAnswers.sort((a, b) => 0.5 - Math.random());
                 console.log(shuffledAnswers)
 
-                //assigning the shuflled answers to a list
+                //assigning the shuflled answers to a html list
                 mChoice.innerHTML = `<li class="answerList">${shuffledAnswers[0]}</li>
                 <li class="answerList">${shuffledAnswers[1]}</li>
                 <li class="answerList">${shuffledAnswers[2]}</li>
                 <li class="answerList">${shuffledAnswers[3]}</li>
                 `
+                // assigning the correct answer after a duration
+                for(const li of document.querySelectorAll(".answerList")){
+                    if(li.textContent.includes(item.correctAnswer)){
+                        setTimeout(()=>{
+                            li.style.backgroundColor = "green"
+                        },6000)
 
-
-
-
+                    }
+                }
 
 
             }, i * 10000)
-            setTimeout(()=>{
-                console.log(item.correctAnswer)
-                // rightAnswr.innerText = item.correctAnswer
-                // rightAnswer.appendChild(rightAnswr)
-            },i*6000)
+
+
 
         });
     })
