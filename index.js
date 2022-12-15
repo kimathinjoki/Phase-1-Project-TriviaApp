@@ -1,14 +1,14 @@
 //category links
-const art =  "https://the-trivia-api.com/api/questions?categories=arts_and_literature&limit=5";
-const film = "https://the-trivia-api.com/api/questions?categories=film_and_tv&limit=5";
-const food = "https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=5";
-const general = "https://the-trivia-api.com/api/questions?categories=general_knowledge&limit=5";
+const art =  "https://the-trivia-api.com/api/questions?categories=arts_and_literature&limit=20";
+const film = "https://the-trivia-api.com/api/questions?categories=film_and_tv&limit=20";
+const food = "https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=20";
+const general = "https://the-trivia-api.com/api/questions?categories=general_knowledge&limit=20";
 const geography = "https://the-trivia-api.com/api/questions?categories=geography&limit=20";
 const history = "https://the-trivia-api.com/api/questions?categories=history&limit=20";
-const music = "https://the-trivia-api.com/api/questions?categories=music&limit=20&difficulty=medium";
-const science = "https://the-trivia-api.com/api/questions?categories=science&limit=20&difficulty=easy";
-const society = "https://the-trivia-api.com/api/questions?categories=society_and_culture&limit=20&difficulty=easy";
-const sport = "https://the-trivia-api.com/api/questions?categories=sport_and_leisure&limit=20&difficulty=easy";
+const music = "https://the-trivia-api.com/api/questions?categories=music&limit=20";
+const science = "https://the-trivia-api.com/api/questions?categories=science&limit=20";
+const society = "https://the-trivia-api.com/api/questions?categories=society_and_culture&limit=20";
+const sport = "https://the-trivia-api.com/api/questions?categories=sport_and_leisure&limit=20";
 const randomQn = "https://the-trivia-api.com/api/questions";
 
 //getting the specific category menus
@@ -23,33 +23,65 @@ const scienceElem = document.getElementById("science")
 const societyElem = document.getElementById("society")
 const sportElem = document.getElementById("sport")
 
+//the start button function
+const startbtn = document.querySelector(".start")
+const triviaField = document.querySelector(".triviaContainer")
+
+//the progress bar
+const progressBar =document.querySelector(".progress-value")
+
 document.addEventListener("DOMContentLoaded",()=>{
+
+//the start button function
+    const startbtn = document.querySelector(".start")
+    const triviaField = document.querySelector(".triviaContainer")
+
+// //the progress bar
+//     const progressBar =document.querySelector(".progress-value")
+
+    //Displaying the question field with random 20 trivia questions
+    startbtn.addEventListener('click',()=>{
+        triviaField.style.display = "block"
+        startbtn.style.display= "none"
+        questionFetch(randomQn)
+
+    })
+
+// function to hide the start button when a category is clicked
+    const hideStart = function(){
+        triviaField.style.display = "block"
+        startbtn.style.display= "none"
+    }
+
 
     //adding event listers for the various categories
     artElem.addEventListener('click',()=>{
+        hideStart()
         questionFetch(art)
     })
-    filmElem.addEventListener('click',()=>{
-        questionFetch(film)
-    })
-    foodElem.addEventListener('click',()=>{
-        questionFetch(food)
-    })
-    generalElem.addEventListener('click',()=>{
-        questionFetch(general)
-    })
+
+    filmElem.addEventListener('click',()=>questionFetch(film))
+
+    foodElem.addEventListener('click',()=>questionFetch("https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=5"))
+
+    generalElem.addEventListener('click',()=>questionFetch(general))
+
     historyElem.addEventListener('click',()=>{
         questionFetch(history)
     })
+
     musicElem.addEventListener('click',()=>{
         questionFetch(music)
     })
+
     scienceElem.addEventListener('click',()=>{
         questionFetch(science)
     })
+
     societyElem.addEventListener('click',()=>{
         questionFetch(society)
     })
+
     sportElem.addEventListener('click',()=>{
         questionFetch(sport)
     })
@@ -69,6 +101,35 @@ document.addEventListener("DOMContentLoaded",()=>{
 // }
 
 //function for fetching the data and appending it in various html elements
+
+
+
+//     //category links
+// const art =  "https://the-trivia-api.com/api/questions?categories=arts_and_literature&limit=20";
+// const film = "https://the-trivia-api.com/api/questions?categories=film_and_tv&limit=20";
+// const food = "https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=20";
+// const general = "https://the-trivia-api.com/api/questions?categories=general_knowledge&limit=20";
+// const geography = "https://the-trivia-api.com/api/questions?categories=geography&limit=20";
+// const history = "https://the-trivia-api.com/api/questions?categories=history&limit=20";
+// const music = "https://the-trivia-api.com/api/questions?categories=music&limit=20";
+// const science = "https://the-trivia-api.com/api/questions?categories=science&limit=20";
+// const society = "https://the-trivia-api.com/api/questions?categories=society_and_culture&limit=20";
+// const sport = "https://the-trivia-api.com/api/questions?categories=sport_and_leisure&limit=20";
+// const randomQn = "https://the-trivia-api.com/api/questions";
+
+// //getting the specific category menus
+
+// const artElem = document.getElementById("art")
+// const filmElem = document.getElementById("film")
+// const foodElem = document.getElementById("food")
+// const generalElem = document.getElementById("general")
+// const historyElem = document.getElementById("history")
+//     const musicElem = document.getElementById("music")
+//     const scienceElem = document.getElementById("science")
+//     const societyElem = document.getElementById("society")
+//     const sportElem = document.getElementById("sport")
+
+
 
 function questionFetch(url){
     fetch(url)
@@ -102,6 +163,10 @@ function questionFetch(url){
                 <li class="answerList">${shuffledAnswers[2]}</li>
                 <li class="answerList">${shuffledAnswers[3]}</li>
                 `
+                //making the progress bar restart on each loop
+                // progressBar.style.animation ="load 10s"
+
+
                 // assigning the correct answer after a duration
                 for(const li of document.querySelectorAll(".answerList")){
                     if(li.textContent.includes(item.correctAnswer)){
@@ -113,6 +178,9 @@ function questionFetch(url){
                     }
                 }
 
+                //making the progress bar restart on each loop
+                progressBar.style.animation ="load 10s"
+
 
             }, i * 10000)
 
@@ -121,3 +189,7 @@ function questionFetch(url){
         });
     })
 }
+
+// function showContent(){
+//     const triviaSection = document.getElementById("triviaContainer")
+// }
