@@ -14,12 +14,15 @@ The user can pick from the menu field the category he/she wants to be quized in.
 * Quick mind
 
 #### Running
-* Open the following [link](url) in your browser:
+* Open the following [link](https://kimathinjoki.github.io/Phase-1-Project-TriviaApp/) in your browser:
 ```
-www.thelink
+https://kimathinjoki.github.io/Phase-1-Project-TriviaApp/
 ```
 * Click the start button at the center of the page to go for a random questioning round of 20 questions.
 * You can go to the menu and select a category to be quized in.
+* Each round contains 20 questions.
+* You can replay a round by pressing the replay button at the bottom right corner of the page or reselect a category.
+* One can register by filling in the form retrieved by clicking the register Icon at the top right corner of the page.
 
 #### Author
 This project was contributed by: Kimathi Njoki
