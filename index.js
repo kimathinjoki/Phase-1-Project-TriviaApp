@@ -37,9 +37,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     const startbtn = document.querySelector(".start")
     const triviaField = document.querySelector(".triviaContainer")
 
-// //the progress bar
-//     const progressBar =document.querySelector(".progress-value")
-
     //Displaying the question field with random 20 trivia questions
     startbtn.addEventListener('click',()=>{
         triviaField.style.display = "block"
@@ -47,6 +44,16 @@ document.addEventListener("DOMContentLoaded",()=>{
         questionFetch(randomQn)
 
     })
+
+// diplay register form when pressed.
+    const registerBtn = document.querySelector(".register")
+    const form = document.querySelector("#regForm")
+    const loginBtn = document.querySelector("#login")
+    registerBtn.addEventListener('click',()=>{
+        form.style.display="block"
+
+    })
+    loginBtn.addEventListener('click')
 
 // function to hide the start button when a category is clicked
     const hideStart = function(){
