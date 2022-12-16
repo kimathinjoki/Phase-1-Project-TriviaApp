@@ -13,15 +13,16 @@ const randomQn = "https://the-trivia-api.com/api/questions";
 
 //getting the specific category menus
 
-const artElem = document.getElementById("art")
-const filmElem = document.getElementById("filmu")
-const foodElem = document.getElementById("food")
-const generalElem = document.getElementById("general")
-const historyElem = document.getElementById("history")
-const musicElem = document.getElementById("music")
-const scienceElem = document.getElementById("science")
-const societyElem = document.getElementById("society")
-const sportElem = document.getElementById("sport")
+const artElem = document.getElementById("art");
+const filmElem = document.querySelector("#film");
+const foodElem = document.getElementById("food");
+const generalElem = document.getElementById("general");
+const geographyElem = document.getElementById("geography")
+const historyElem = document.getElementById("history");
+const musicElem = document.getElementById("music");
+const scienceElem = document.getElementById("science");
+const societyElem = document.getElementById("society");
+const sportElem = document.getElementById("sport");
 
 //the start button function
 const startbtn = document.querySelector(".start")
@@ -51,41 +52,59 @@ document.addEventListener("DOMContentLoaded",()=>{
     const hideStart = function(){
         triviaField.style.display = "block"
         startbtn.style.display= "none"
-    }
+    };
 
 
     //adding event listers for the various categories
     artElem.addEventListener('click',()=>{
         hideStart()
         questionFetch(art)
-    })
+    });
+
 
     filmElem.addEventListener('click',()=>{
         console.log("error iko hapa")
-        // questionFetch(film)
+        hideStart()
+        questionFetch(film)
+    });
+
+    foodElem.addEventListener('click',()=>{
+        hideStart()
+        questionFetch(food)
+    });
+
+    generalElem.addEventListener('click',()=>{
+        hideStart()
+        questionFetch(general)
+    });
+
+    geographyElem.addEventListener('click',()=>{
+        hideStart()
+        questionFetch(geography)
     })
 
-    foodElem.addEventListener('click',()=>questionFetch("https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=5"))
-
-    generalElem.addEventListener('click',()=>questionFetch(general))
-
     historyElem.addEventListener('click',()=>{
+        hideStart()
         questionFetch(history)
     })
 
     musicElem.addEventListener('click',()=>{
+        hideStart()
         questionFetch(music)
     })
 
     scienceElem.addEventListener('click',()=>{
+        hideStart()
         questionFetch(science)
     })
 
     societyElem.addEventListener('click',()=>{
+        hideStart()
         questionFetch(society)
     })
 
     sportElem.addEventListener('click',()=>{
+        hideStart()
         questionFetch(sport)
     })
 

@@ -4,7 +4,7 @@
 
 
 
-/*for the interior page*/
+/*for the interior page and header*/
 
 * {
   margin: 0;
@@ -20,7 +20,7 @@ body {
   background: #000;
 }
 
-a {
+#slogan {
   text-decoration: none;
   color: inherit;
   font-size: 3vmin;
@@ -30,7 +30,6 @@ a {
   position: absolute;
   text-align: center;
   font-size: 8vmin;
-  /* text-transform: uppercase; */
   letter-spacing: 5px;
   line-height: .8;
   background: linear-gradient(90deg, #000, #fff, #000);
@@ -39,7 +38,7 @@ a {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 10s linear infinite;
+  animation: shine 12s linear infinite;
   top:0;
 }
 
@@ -150,7 +149,6 @@ a {
     margin-bottom: 20px;
     border-style: none;
     padding-left: 10px;
-    /* border-left: 2px solid #3ca0e7; */
     transition: all 0.3s ease
 
   }
@@ -262,10 +260,6 @@ a {
   background: #E7F3F1;
   border: .50em solid white;
   padding: 1em;
-  font-family: 'Open Sans', sans-serif;
-  /* margin: 10px;
-  margin-left: auto;
-  margin-right: auto;*/
   margin-top: 5px;
   border-radius: 30px;
   height: fit-content;
@@ -273,7 +267,7 @@ a {
   height: fit-content;
   width: 550px;
 
-  /* display:none; */
+
 }
 
 /*diplaying and hiding content*/
@@ -353,3 +347,72 @@ a {
   color: #ffffff;
 }
 
+/* registration form*/
+
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form{
+    height: 320px;
+    width: 200px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 30%;
+    left: 90%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 40px 25px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 30px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+#login{
+    margin-top: 50px;
+    width: 60%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
