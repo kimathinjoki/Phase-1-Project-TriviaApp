@@ -219,7 +219,7 @@ body {
   background: #fff;
   height: 10px;
   width: 0;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 21;
 }
 
 @keyframes load {
@@ -494,5 +494,84 @@ input{
   justify-content:center;
   display: flex;
   top: 0%;
+  right:0%;
+}
+
+
+/*replay button*/
+
+.rap .cons {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  top: 0;
+}
+
+.rap .tip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  top: 0;
+
+
+}
+
+.rap .tip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 0%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  top: 0;
+}
+
+.rap .cons:hover .tip {
+  top: -50%;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.rap .cons:hover span,
+.rap .cons:hover .tip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.rap .replay:hover,
+.rap .replay:hover .tip,
+.rap .replay:hover .tip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.rap{
+  position: absolute;
+  justify-content:center;
+  display: flex;
+  bottom: 0;
   right:0%;
 }
