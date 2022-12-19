@@ -274,6 +274,7 @@ body {
 
 .triviaContainer{
   display: none;
+  cursor: pointer;
 }
 
 .wrapper{
